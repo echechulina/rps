@@ -32,8 +32,6 @@ function runGame() {
     message_area.innerHTML+= "Choose your weapon! <br />";
     message_area.innerHTML+= "***** <br />";
 
-    
-    
 
     // setting game choices
     var players_choices = document.getElementById('gameOption');
@@ -73,20 +71,16 @@ scissors();
 notvalid();
 
 function notvalid () {
-    if ((players_choice !==computers_choice) && (players_choice !== 'rock') && (players_choice !== 'paper')
-     && (players_choice !== 'scissors'))
+    if ((players_choice == computers_choice) && (players_choice !== 'rock') && (players_choice !== 'paper')&& (players_choice !== 'scissors'))
     { 
         message_area.innerHTML+= "Well that's not a valid choice. <br />";
         clearArea = true;
-
     }
-
 }
 
 function choice(){
     if (players_choice == computers_choice) {
          message_area.innerHTML+= 'Tie! No one wins, play again! <br />';
-
     }
 }
 
