@@ -45,66 +45,45 @@ function runGame() {
     message_area.innerHTML+= 'Player chose: ' + players_choice + ' <br />';
     message_area.innerHTML+= "***** <br />";
 
-//     // conditionals for actual game logic
-//     if (players_choice == computers_choice) {
-//         message_area.innerHTML+= 'Tie! No one wins, play again! <br />';
-//     } else if (players_choice == 'rock') {
-//         checkComputerWins('paper', 'covers', 'smashes');
-//     } else if (players_choice == 'paper') {
-//         checkComputerWins('scissors', 'cuts', 'covers');
-//     } else if (players_choice == 'scissors') {
-//         checkComputerWins('rock', 'smashes', 'cuts');
-//     } else {
-//         message_area.innerHTML+= "Well that's not a valid choice. <br />";
-//         clearArea = true;
-//     }
 
+checkChoices();
 
-//     // restart game loop
- //    checkStatus();
-// }
-
-choice();
-rock();
-paper();
-scissors();
-notvalid();
-
-function notvalid () {
-    if ((players_choice == computers_choice) && (players_choice !== 'rock') && (players_choice !== 'paper')&& (players_choice !== 'scissors'))
-    { 
-        message_area.innerHTML+= "Well that's not a valid choice. <br />";
-        clearArea = true;
-    }
+function checkChoices() {
+  if (players_choice == computers_choice) {
+    choice();
+  } else if (players_choice == 'rock') {
+    rock();
+  } else if (players_choice == 'paper') {
+    paper();
+  } else if (players_choice == 'scissors') {
+    scissors();
+  } else {
+    notValid();
+  }
 }
 
-function choice(){
-    if (players_choice == computers_choice) {
-         message_area.innerHTML+= 'Tie! No one wins, play again! <br />';
-    }
+function choice() {
+  message_area.innerHTML+= 'Tie! No one wins, play again! <br />';
 }
 
 function rock() {
-    if (players_choice == 'rock'){
-        checkComputerWins('paper', 'covers', 'smashes');
-    } 
+  checkComputerWins('paper', 'covers', 'smashes');
 }
-
 
 function paper() {
-    if (players_choice == 'paper'){
-        checkComputerWins('scissors', 'cuts', 'covers');
-    } 
+  checkComputerWins('scissors', 'cuts', 'covers');
 }
-
-
+ 
 function scissors() {
-    if (players_choice == 'scissors'){
-        checkComputerWins('rock', 'smashes', 'cuts');
-    } 
+  checkComputerWins('rock', 'smashes', 'cuts');
 }
 
+function notvalid () {
+  message_area.innerHTML+= "Well that's not a valid choice. <br />";
+  clearArea = true;
+}
 checkStatus();
+
 }
 
 
