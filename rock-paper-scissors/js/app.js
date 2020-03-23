@@ -88,6 +88,14 @@ checkStatus();
 
 
 
+changeBackgroundcolor ();
+
+function changeBackgroundcolor (){
+
+    document.body.style.background = 'yellow'
+}
+
+
 // checks whether computer wins against player choice
 function checkComputerWins(validateChoice, winMessage, loseMessage) {
     if (computers_choice == validateChoice) {
